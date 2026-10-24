@@ -1,2 +1,33 @@
-# Natural-language-pick-place
-Natural language and vision-based pick-and-place system using a small robot manipulator.
+# Natural Language Pick & Place
+
+자연어 명령과 비전 인식을 기반으로 소형 로봇 매니퓰레이터의 Pick & Place 작업을 수행하는 프로젝트입니다.
+
+## 프로젝트 목표
+
+- 자연어 명령을 작업 명세로 변환
+- 비전 기반 물체 인식 및 위치 추정
+- ROS 2 기반 로봇 제어 및 모션 플래닝
+- 실행 전 검증 및 실패 시 재시도 기능 구현
+
+## 기술 스택
+
+- Python
+- ROS 2 Jazzy
+- OpenCV
+- YOLO
+- MoveIt 2
+- GitHub
+
+## 팀 정보
+
+- 팀명: 일론머스크의 왼팔
+- 분반 및 조: 3분반 2조
+- 과제 연계 기관: KETI 지능로보틱스연구센터
+
+## 개발 상태
+
+현재 개발 계획 수립 및 개발 환경 준비 단계입니다.
+
+## Documentation
+
+프로젝트 제안서, 개발 일정, 역할 분담 및 회의록은 GitHub Wiki에서 관리합니다.
