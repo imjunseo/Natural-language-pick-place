@@ -30,4 +30,4 @@
 
 ## Documentation
 
-프로젝트 제안서, 개발 일정, 역할 분담 및 회의록은 GitHub Wiki에서 관리합니다.
+프로젝트 제안서, 개발 일정, 역할 분담은 GitHub Wiki에서 관리합니다.
