@@ -4,7 +4,7 @@
 
 ## 1. 팀 기준 환경
 
-아래 확인값은 팀원 준서의 터미널 출력으로 확인했다. 신규 PC에서 전체 설치 절차를 재현한 결과는 아니다.
+아래 확인값은 신규 PC에서 전체 설치 절차를 재현한 결과는 아니다.
 
 | 구성 | 팀 기준 | 확인 상태 |
 | --- | --- | --- |
@@ -116,7 +116,7 @@ ros2 pkg list | grep -E '^ros_gz'
 
 기대 결과: Ubuntu 24.04, Python 3.12 계열, jazzy, OpenCV 4.6.0, chess 1.11.2, e2e4 legal: True, ROS Python 연결 OK, Gazebo 8.x, ros_gz 계열 패키지 목록.
 
-준서 PC에서 확인된 패키지: ros_gz, ros_gz_bridge, ros_gz_image, ros_gz_interfaces, ros_gz_sim, ros_gz_sim_demos.
+확인된 패키지: ros_gz, ros_gz_bridge, ros_gz_image, ros_gz_interfaces, ros_gz_sim, ros_gz_sim_demos.
 
 GUI 실행은 별도로 확인한다.
 
@@ -160,8 +160,8 @@ git pull --ff-only
 
 ## 9. 현재 완료 범위와 다음 단계
 
-- [x] 준서 PC의 ROS·OpenCV·chess import 확인
-- [x] 준서 PC의 Gazebo 버전·ros_gz 설치 확인
+- [x] PC의 ROS·OpenCV·chess import 확인
+- [x] PC의 Gazebo 버전·ros_gz 설치 확인
 - [ ] 모든 팀원의 기본 환경 및 Gazebo GUI 검증
 - [ ] OMX-AI의 정확한 모델·공식 소스·Jazzy 호환 브랜치 확정
 - [ ] OMX-AI 모델과 체스판·체스 말을 Gazebo에 배치
