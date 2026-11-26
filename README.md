@@ -47,7 +47,7 @@
 - 공통 기준: Ubuntu 24.04 / ROS 2 Jazzy / Gazebo Harmonic 8.x / Python 3.12 계열
 - Python: 시스템 OpenCV 4.6.0 + chess 1.11.2, 시스템 패키지를 사용하는 가상환경
 - 가이드 포함 내용: Windows WSL 시작, 설치 순서, 가상환경 설정, 공통 확인 명령, Gazebo GUI 확인, 오류 대응
-- 현재 확인: 준서 PC의 Python 모듈 import, Gazebo 버전 및 ros_gz 패키지 설치
+- 현재 확인: Python 모듈 import, Gazebo 버전 및 ros_gz 패키지 설치
 - 다음 확인: 팀원별 GUI 실행, OMX-AI 모델·제어 패키지 호환성, 실제 시뮬레이션 동작
 - YOLO·MoveIt 2 및 자연어 모델 의존성은 구현 방식을 확정한 뒤 추가합니다.
 
