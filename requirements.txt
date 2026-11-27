@@ -1,0 +1,2 @@
+chess==1.11.2
+# OpenCV is provided by Ubuntu python3-opencv; do not pip-install another cv2.

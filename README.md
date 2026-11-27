@@ -1,54 +1,22 @@
-# Natural Language Pick & Place
+# 자연어·비전 기반 체스 로봇 — 준서 개인 시뮬레이션
 
-자연어 명령과 비전 인식을 기반으로 소형 로봇 매니퓰레이터의 Pick & Place 작업을 수행하는 프로젝트입니다.
+OMX-AI 로봇팔과 FHD USB 웹캠을 이용한 체스 말 조작 프로젝트. 각 팀원이 전체 시스템을 독립 개발하고 결과를 비교한다. 이 junseo-simulation 브랜치는 준서의 개인 개발 버전이다.
 
-## 프로젝트 목표
+**[개인 버전 실행 가이드·구현 상태](docs/JUNSEO_SIMULATION.md)** · [공통 환경 설정](docs/TEAM_ENVIRONMENT.md)
 
-- 자연어 명령을 작업 명세로 변환
-- 비전 기반 물체 인식 및 위치 추정
-- ROS 2 기반 로봇 제어 및 모션 플래닝
-- 실행 전 검증 및 실패 시 재시도 기능 구현
+현재 구현: 좌표를 명시한 한국어/UCI 명령 → 체스 규칙 검사 → 이동·잡기·캐슬링·앙파상 작업 계획 → 실행 결과 검증 → 보드 상태 갱신 및 로그. 합성 이미지 점유 인식 예제와 기존 ZIP 기반 Gazebo 체스 장면을 포함한다.
 
-## 기술 스택
+```bash
+source /opt/ros/jazzy/setup.bash
+source ~/chess_robot_venv/bin/activate
+python -m pip install -r requirements.txt
+python -m chess_robot --reference-images --command 'e2 폰을 e4로 옮겨' --command d7d5 --command e4d5
+```
 
-- Python
-- ROS 2 Jazzy
-- OpenCV
-- YOLO
-- MoveIt 2
-- GitHub
+이 명령은 메모리·합성 이미지 예제다. Gazebo는 별도 터미널에서 bash sim/start.sh로 시작하고 python -m chess_robot --backend gazebo-pose로 위치 이동 통합 테스트를 할 수 있다.
 
-## 팀 정보
+**아직 OMX-AI 팔 파지 시뮬레이션은 구현되지 않았다.** Gazebo 경로는 정적 말의 직접 포즈 변경이며 실제 팔 동작이 아니다. 가상 카메라 영상 연결·실제 말 인식·역기구학·접촉/충돌·실장비는 다음 구현 대상이다. Gazebo 런타임은 사용자 환경에서 확인이 필요하다.
 
-- 팀명: 일론머스크의 왼팔
-- 분반 및 조: 3분반 2조
-- 과제 연계 기관: KETI 지능로보틱스연구센터
+Python 기능 테스트: python -m unittest discover -s tests -v (9개 통과).
 
-## 개발 상태
-
-현재 개발 계획 수립 및 개발 환경 준비 단계입니다. 아래 순서로 기능을 검증할 계획입니다.
-
-1. 자연어 명령에서 대상 물체와 목적지를 추출합니다.
-2. 이미지에서 대상을 찾고 로봇 좌표계 기준 위치를 추정합니다.
-3. ROS 2와 MoveIt 2에서 도달 가능 여부와 경로를 검증합니다.
-
-기본 브랜치에는 설계 개요가 있습니다. 구현이 추가되면 시뮬레이션 실행 절차와 예제 입력을 기록할 예정입니다.
-
-## Documentation
-
-프로젝트 제안서, 개발 일정, 역할 분담은 [GitHub Wiki](https://github.com/imjunseo/Natural-language-pick-place/wiki)에서 관리합니다.
-
-## 체스 로봇팔 개발 및 팀 환경 설정
-
-현재 구현 목표는 **OMX-AI 로봇팔 + FHD USB 웹캠**을 이용한 자연어·비전 기반 체스 말 조작입니다. 체스 규칙으로 합법 수를 검증한 뒤 로봇 동작으로 연결할 예정입니다.
-
-**팀원은 [팀 공통 환경 설정 가이드](docs/TEAM_ENVIRONMENT.md)부터 따라 주세요.**
-
-- 공통 기준: Ubuntu 24.04 / ROS 2 Jazzy / Gazebo Harmonic 8.x / Python 3.12 계열
-- Python: 시스템 OpenCV 4.6.0 + chess 1.11.2, 시스템 패키지를 사용하는 가상환경
-- 가이드 포함 내용: Windows WSL 시작, 설치 순서, 가상환경 설정, 공통 확인 명령, Gazebo GUI 확인, 오류 대응
-- 현재 확인: Python 모듈 import, Gazebo 버전 및 ros_gz 패키지 설치
-- 다음 확인: 팀원별 GUI 실행, OMX-AI 모델·제어 패키지 호환성, 실제 시뮬레이션 동작
-- YOLO·MoveIt 2 및 자연어 모델 의존성은 구현 방식을 확정한 뒤 추가합니다.
-
-하드웨어 없이 기본 환경과 이미지·규칙 처리를 준비할 수 있습니다. 실제 로봇팔·웹캠 연결과 좌표 보정은 장비 확보 후 진행합니다.
+팀명: 일론머스크의 왼팔 / 3분반 2조 / 과제 연계: KETI 지능로보틱스연구센터.

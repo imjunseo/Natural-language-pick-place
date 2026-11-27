@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sdf version="1.9">
+  <model name="white_pawn">
+    <link name="body">
+      <pose>0 0 0.01250 0 0 0</pose>
+      <inertial>
+        <mass>0.01</mass>
+        <inertia><ixx>8.543e-07</ixx><iyy>8.543e-07</iyy><izz>6.670e-07</izz><ixy>0</ixy><ixz>0</ixz><iyz>0</iyz></inertia>
+      </inertial>
+      <collision name="col">
+        <geometry><cylinder><radius>0.01155</radius><length>0.02500</length></cylinder></geometry>
+        <surface><friction><ode><mu>1.2</mu><mu2>1.2</mu2></ode></friction></surface>
+      </collision>
+      <visual name="vis">
+        <geometry><cylinder><radius>0.01155</radius><length>0.02500</length></cylinder></geometry>
+        <material><ambient>0.92 0.90 0.85 1</ambient><diffuse>0.92 0.90 0.85 1</diffuse><specular>0.1 0.1 0.1 1</specular></material>
+      </visual>
+    </link>
+  <static>true</static></model>
+</sdf>

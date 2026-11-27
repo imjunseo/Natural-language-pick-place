@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sdf version="1.9">
+  <world name="chess_world">
+    <physics name="1ms" type="ignored"><max_step_size>0.001</max_step_size><real_time_factor>1.0</real_time_factor></physics>
+    <plugin filename="gz-sim-physics-system" name="gz::sim::systems::Physics" />
+    <plugin filename="gz-sim-user-commands-system" name="gz::sim::systems::UserCommands" />
+    <plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster" />
+    <plugin filename="gz-sim-sensors-system" name="gz::sim::systems::Sensors"><render_engine>ogre2</render_engine></plugin>
+    <light type="directional" name="sun">
+      <cast_shadows>true</cast_shadows><pose>0 0 10 0 0 0</pose>
+      <diffuse>0.9 0.9 0.9 1</diffuse><specular>0.2 0.2 0.2 1</specular><direction>-0.3 0.2 -0.9</direction>
+    </light>
+    <model name="ground_plane"><static>true</static><link name="link">
+      <collision name="c"><geometry><plane><normal>0 0 1</normal><size>10 10</size></plane></geometry></collision>
+      <visual name="v"><geometry><plane><normal>0 0 1</normal><size>10 10</size></plane></geometry><material><ambient>0.8 0.8 0.8 1</ambient><diffuse>0.8 0.8 0.8 1</diffuse><specular>0.1 0.1 0.1 1</specular></material></visual>
+    </link></model>
+    <include><uri>model://chessboard</uri><name>chessboard</name><pose>0.19000 0 0 0 0 0</pose></include>
+    <include><uri>model://white_rook</uri><name>white_rook_a1</name><pose>0.06750 0.12250 0.00500 0 0 0</pose></include>
+    <include><uri>model://black_rook</uri><name>black_rook_a8</name><pose>0.31250 0.12250 0.00500 0 0 0</pose></include>
+    <include><uri>model://white_knight</uri><name>white_knight_b1</name><pose>0.06750 0.08750 0.00500 0 0 0</pose></include>
+    <include><uri>model://black_knight</uri><name>black_knight_b8</name><pose>0.31250 0.08750 0.00500 0 0 0</pose></include>
+    <include><uri>model://white_bishop</uri><name>white_bishop_c1</name><pose>0.06750 0.05250 0.00500 0 0 0</pose></include>
+    <include><uri>model://black_bishop</uri><name>black_bishop_c8</name><pose>0.31250 0.05250 0.00500 0 0 0</pose></include>
+    <include><uri>model://white_queen</uri><name>white_queen_d1</name><pose>0.06750 0.01750 0.00500 0 0 0</pose></include>
+    <include><uri>model://black_queen</uri><name>black_queen_d8</name><pose>0.31250 0.01750 0.00500 0 0 0</pose></include>
+    <include><uri>model://white_king</uri><name>white_king_e1</name><pose>0.06750 -0.01750 0.00500 0 0 0</pose></include>
+    <include><uri>model://black_king</uri><name>black_king_e8</name><pose>0.31250 -0.01750 0.00500 0 0 0</pose></include>
+    <include><uri>model://white_bishop</uri><name>white_bishop_f1</name><pose>0.06750 -0.05250 0.00500 0 0 0</pose></include>
+    <include><uri>model://black_bishop</uri><name>black_bishop_f8</name><pose>0.31250 -0.05250 0.00500 0 0 0</pose></include>
+    <include><uri>model://white_knight</uri><name>white_knight_g1</name><pose>0.06750 -0.08750 0.00500 0 0 0</pose></include>
+    <include><uri>model://black_knight</uri><name>black_knight_g8</name><pose>0.31250 -0.08750 0.00500 0 0 0</pose></include>
+    <include><uri>model://white_rook</uri><name>white_rook_h1</name><pose>0.06750 -0.12250 0.00500 0 0 0</pose></include>
+    <include><uri>model://black_rook</uri><name>black_rook_h8</name><pose>0.31250 -0.12250 0.00500 0 0 0</pose></include>
+    <include><uri>model://white_pawn</uri><name>white_pawn_a2</name><pose>0.10250 0.12250 0.00500 0 0 0</pose></include>
+    <include><uri>model://black_pawn</uri><name>black_pawn_a7</name><pose>0.27750 0.12250 0.00500 0 0 0</pose></include>
+    <include><uri>model://white_pawn</uri><name>white_pawn_b2</name><pose>0.10250 0.08750 0.00500 0 0 0</pose></include>
+    <include><uri>model://black_pawn</uri><name>black_pawn_b7</name><pose>0.27750 0.08750 0.00500 0 0 0</pose></include>
+    <include><uri>model://white_pawn</uri><name>white_pawn_c2</name><pose>0.10250 0.05250 0.00500 0 0 0</pose></include>
+    <include><uri>model://black_pawn</uri><name>black_pawn_c7</name><pose>0.27750 0.05250 0.00500 0 0 0</pose></include>
+    <include><uri>model://white_pawn</uri><name>white_pawn_d2</name><pose>0.10250 0.01750 0.00500 0 0 0</pose></include>
+    <include><uri>model://black_pawn</uri><name>black_pawn_d7</name><pose>0.27750 0.01750 0.00500 0 0 0</pose></include>
+    <include><uri>model://white_pawn</uri><name>white_pawn_e2</name><pose>0.10250 -0.01750 0.00500 0 0 0</pose></include>
+    <include><uri>model://black_pawn</uri><name>black_pawn_e7</name><pose>0.27750 -0.01750 0.00500 0 0 0</pose></include>
+    <include><uri>model://white_pawn</uri><name>white_pawn_f2</name><pose>0.10250 -0.05250 0.00500 0 0 0</pose></include>
+    <include><uri>model://black_pawn</uri><name>black_pawn_f7</name><pose>0.27750 -0.05250 0.00500 0 0 0</pose></include>
+    <include><uri>model://white_pawn</uri><name>white_pawn_g2</name><pose>0.10250 -0.08750 0.00500 0 0 0</pose></include>
+    <include><uri>model://black_pawn</uri><name>black_pawn_g7</name><pose>0.27750 -0.08750 0.00500 0 0 0</pose></include>
+    <include><uri>model://white_pawn</uri><name>white_pawn_h2</name><pose>0.10250 -0.12250 0.00500 0 0 0</pose></include>
+    <include><uri>model://black_pawn</uri><name>black_pawn_h7</name><pose>0.27750 -0.12250 0.00500 0 0 0</pose></include>
+  <model name="overhead_camera"><static>true</static><pose>0.19 0 0.55 0 1.57079632679 0</pose><link name="camera_link"><sensor name="camera" type="camera"><always_on>true</always_on><update_rate>10</update_rate><topic>/chess/camera</topic><camera><horizontal_fov>0.8</horizontal_fov><image><width>640</width><height>640</height><format>R8G8B8</format></image><clip><near>0.01</near><far>5</far></clip></camera></sensor></link></model></world>
+</sdf>
